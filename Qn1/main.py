@@ -46,7 +46,7 @@ data = [
         [0.77, 0.27, 2.41],
         [0.90, -0.43, -8.71],
         [3.52, -0.36, 6.43]
-    ]) # w3
+    ]) 
 ]
 
 # Measure mean and covariance
@@ -73,7 +73,7 @@ for i in range(n):
         g[i] = np.append(g[i], gtemp)
         
 # Print outputs
-for i in range(3):
+for i in range(n):
     print(i, ':')
     for val in g[i]:
         print(val)
