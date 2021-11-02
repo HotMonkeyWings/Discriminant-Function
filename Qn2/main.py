@@ -5,13 +5,11 @@ from math import pi, log
 def discriminant_function(x, mean, cov, d, P):
     output = np.matmul(-0.5*(x - mean), np.linalg.inv(cov))
     output = np.matmul(output, (x - mean).T)
-    output += -0.5*d*log(2*pi) - 0.5*log(np.linalg.det(cov)) 
-    output += (log(P) if P != 0 else 0)
+    output += -0.5*d*log(2*pi) - 0.5*log(np.linalg.det(cov)) + ( log(P) if P != 0 else 0)
 
     return output
         
 def main():
-
     # Sample Data
     data = [
         # W1
@@ -65,30 +63,25 @@ def main():
         means.append(data[i].mean(axis=0))
         cov.append(np.cov(data[i].T))
 
-    # Configuration values
+    # Arbitary values
     n = len(data)
     P = [1/n for i in range(n)]
     d = len(data[0][0])
+    g = [np.array([]) for _ in range(n)]
 
-    # Taking each dataset from the classes in sample data
-    for j in range(n):
-        print("\nData classes should be classified as:", j+1)
-        total_count, count = 0, 0
+    # Measuring discriminant functions
+    for i in range(n):
+        # For sample in the dataset
+        for x in data[i]:
+            g[i] = np.append(g[i], discriminant_function(x, means[i], cov[i], d, P[i]))
 
-        # Taking x as dataset belonging to class j + 1
-        for x in data[j]:
-            g_values = [0 for g in range(n)]        # Array for all discrminant function outputs.
-
-            # Itering through each class' discriminant function
-            for i in range(n):
-                g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
-
-            # Now to output the maximum result 
-            result = g_values.index(max(g_values)) + 1
-            print(x, "\twas classified as", result)
-            total_count, count = total_count + 1, (count + 1 if j == result - 1 else count)
-        
-        print("Success Rate:", (count/total_count)*100,"%")
+    # Print outputs
+    for i in range(n):
+        print(i, ':')
+        for val in g[i]:
+            print(val)
+        print("Mean:",g[i].mean())
+        print()
 
 
 if __name__ == '__main__':
