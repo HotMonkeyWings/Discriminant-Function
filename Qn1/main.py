@@ -3,10 +3,19 @@ from math import pi, log
 
 # Discriminant function as defined in the question
 def discriminant_function(x, mean, cov, d, P):
-    output = np.matmul(-0.5*(x - mean), np.linalg.inv(cov))
-    output = np.matmul(output, (x - mean).T)
-    output += -0.5*d*log(2*pi) - 0.5*log(np.linalg.det(cov)) 
-    output += (log(P) if P != 0 else 0)
+    # Checking if the dimensions turn out to be scalars in the case only 1 feature is being taken.
+    if d == 1:
+        output = -0.5*(x - mean) * (1/cov)
+        output = output * (x - mean)
+        output += -0.5*d*log(2*pi) - 0.5*log(cov) 
+
+    else: 
+        output = np.matmul(-0.5*(x - mean), np.linalg.inv(cov))
+        output = np.matmul(output, (x - mean).T)
+        output += -0.5*d*log(2*pi) - 0.5*log(np.linalg.det(cov)) 
+
+    # Adding Prior Probability
+    output += log(P)
 
     return output
         
@@ -89,6 +98,7 @@ def main():
             total_count, count = total_count + 1, (count + 1 if j == result - 1 else count)
         
         print("Success Rate:", (count/total_count)*100,"%")
+        print("Fail Rate:", 100 - ((count/total_count))*100,"%")
 
 
 if __name__ == '__main__':
