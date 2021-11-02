@@ -69,7 +69,7 @@ for i in range(n):
     for x in data[i]:
         gtemp = np.matmul(-0.5*(x - means[i]), np.linalg.inv(cov[i]))
         gtemp = np.matmul(gtemp, (data[0][0] - means[0]).T)
-        gtemp += -1.5*log(2*pi) - 0.5*log(np.linalg.det(cov[i])) + log(P)
+        gtemp += -0.5*d*log(2*pi) - 0.5*log(np.linalg.det(cov[i])) + log(P)
         g[i] = np.append(g[i], gtemp)
         
 # Print outputs
