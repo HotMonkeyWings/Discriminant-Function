@@ -68,21 +68,27 @@ def main():
     n = len(data)
     P = [1/n for i in range(n)]
     d = len(data[0][0])
-    g = [np.array([]) for _ in range(n)]
 
     # Measuring discriminant functions
-    for i in range(n):
-        # For sample in the dataset
-        for x in data[i]:
-            g[i] = np.append(g[i], discriminant_function(x, means[i], cov[i], d, P[i]))
 
-    # Print outputs
-    for i in range(n):
-        print(i, ':')
-        for val in g[i]:
-            print(val)
-        print("Mean:",g[i].mean())
-        print()
+    # Taking each dataset from the classes in sample data
+    for j in range(n):
+        print("\nData classes should be classified as:", j+1)
+        total_count, count = 0, 0
+        # Taking x as dataset belonging to class j+1
+        for x in data[j]:
+            g_values = [0 for g in range(n)]        # Array for all discrminant function outputs.
+
+            # Itering through each class' discriminant function
+            for i in range(n):
+                g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
+
+            # Now to output the maximum result 
+            result = g_values.index(max(g_values)) + 1
+            print(x, "\twas classified as", result)
+            total_count, count = total_count + 1, (count + 1 if j == result - 1 else count)
+        
+        print("Success Rate:", (count/total_count)*100,"%")
 
 
 if __name__ == '__main__':
