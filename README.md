@@ -10,7 +10,7 @@ The question, report and source code can be found here.
 ## Solution 1
 
 Based on the formula given:
-![Formula](Qn1/Formula.png)
+![Formula](Qn1/img/Formula.png)
 
 The function has been defined:
 ```
@@ -114,7 +114,7 @@ for j in range(n):
 
 Assuming that all classes have an equal prior probability (as per the configuration in the example picture), the following output is produced:
 
-![Output](Qn1/Output.png)
+![Output](Qn1/img/Output.png)
 
 ## Solution 2
 
@@ -160,7 +160,7 @@ for j in range(n):
 
 This results in the following output:
 
-![Output1](Qn2/ab.png)
+![Output1](Qn2/img/ab.png)
 
 ### Part (c)
 
@@ -176,7 +176,7 @@ d = 2
 ```
 
 This results in the following output:
-![Output2](Qn2/c.png)
+![Output2](Qn2/img/c.png)
 
 ### Part (d)
 
@@ -193,17 +193,17 @@ d = 3
 
 The resuls in the following output:
 
-![Output2](Qn2/d.png)
+![Output2](Qn2/img/d.png)
 
 ### Part (e)
 
 On comparing the three outputs, using one or three features give more accurate results than using the first and second features.
 
-![Output3](Qn2/e.png)
+![Output3](Qn2/img/e.png)
 
 The reason for this could be because the covariance with the third feature is much higher than the ones associated with the second feature.
 
-![Variance](Qn2/CoVar.png)
+![Variance](Qn2/img/CoVar.png)
 
 ### Part (f)
 
@@ -255,4 +255,4 @@ print(x, "\twas classified as", result)
 ```
 
 Here are the outputs for the 4 input vectors mentioned in the question:
-![Otuput4](Qn2/f.png)
+![Otuput4](Qn2/img/f.png)
