@@ -10,7 +10,13 @@ The question, report and source code can be found here.
 ## Solution 1
 
 Based on the formula given:
+<<<<<<< HEAD
 ![Formula](Qn1/img/Formula.png)
+=======
+<center>
+![Formula](Qn1/img/Formula.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 The function has been defined:
 ```
@@ -114,7 +120,13 @@ for j in range(n):
 
 Assuming that all classes have an equal prior probability (as per the configuration in the example picture), the following output is produced:
 
+<<<<<<< HEAD
 ![Output](Qn1/img/Output.png)
+=======
+<center>
+![Output](Qn1/img/Output.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 ## Solution 2
 
@@ -160,7 +172,13 @@ for j in range(n):
 
 This results in the following output:
 
+<<<<<<< HEAD
 ![Output1](Qn2/img/ab.png)
+=======
+<center>
+![Output1](Qn2/img/ab.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 ### Part (c)
 
@@ -176,7 +194,13 @@ d = 2
 ```
 
 This results in the following output:
+<<<<<<< HEAD
 ![Output2](Qn2/img/c.png)
+=======
+<center>
+![Output2](Qn2/img/c.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 ### Part (d)
 
@@ -193,17 +217,35 @@ d = 3
 
 The resuls in the following output:
 
+<<<<<<< HEAD
 ![Output2](Qn2/img/d.png)
+=======
+<center>
+![Output2](Qn2/img/d.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 ### Part (e)
 
 On comparing the three outputs, using one or three features give more accurate results than using the first and second features.
 
+<<<<<<< HEAD
 ![Output3](Qn2/img/e.png)
 
 The reason for this could be because the covariance with the third feature is much higher than the ones associated with the second feature.
 
 ![Variance](Qn2/img/CoVar.png)
+=======
+<center>
+![Output3](Qn2/img/e.png)
+</center>
+
+The reason for this could be because the covariance with the third feature is much higher than the ones associated with the second feature.
+
+<center>
+![Variance](Qn2/img/CoVar.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
 
 ### Part (f)
 
@@ -255,4 +297,10 @@ print(x, "\twas classified as", result)
 ```
 
 Here are the outputs for the 4 input vectors mentioned in the question:
+<<<<<<< HEAD
 ![Otuput4](Qn2/img/f.png)
+=======
+<center>
+![Output4](Qn2/img/f.png)
+</center>
+>>>>>>> 9b4744d (Changed README and Reports)
