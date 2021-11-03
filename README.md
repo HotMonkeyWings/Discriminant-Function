@@ -208,40 +208,48 @@ The reason for this could be because the covariance with the third feature is mu
 ### Part (f)
 
 In order to consider the possible configurations mentioned, the code takes an input vector and goes through all of them.
+
+##### General Configuration values
 ```
-# General Configuration values
 n = len(data) - 1
 P = [0.5, 0.5, 0]
 g_values = [0 for i in range(n)]
+```
 
-# Take input
+##### Get input
+```
 x = list(map(float, input("Enter the input vector: ").strip().split()))
+```
 
-# Case A
+##### Case A
+```
 d = 1
 print("Case A: Using only feature vector x1")
 for i in range(n):
     g_values[i] = discriminant_function(x[0], means[i][0], cov[i][0][0], d, P[i])
-# Now to output the maximum result 
+
 result = g_values.index(max(g_values)) + 1
 print(x, "\twas classified as", result)
+```
 
-# Case B
+##### Case B
+```
 d = 2
 print("\nCase B: Using only feature vectors x1 and x2")
 for i in range(n):
     g_values[i] = discriminant_function(x[0:2], means[i][0:2], cov[i][0:2, 0:2], d, P[i])
-# Now to output the maximum result 
+
 result = g_values.index(max(g_values)) + 1
 print(x, "\twas classified as", result)
+```
 
-# Case C
+##### Case C
+```
 d = 3
 print("\nCase C: Using all feature vectors")
 for i in range(n):
     g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
 
-# Now to output the maximum result 
 result = g_values.index(max(g_values)) + 1
 print(x, "\twas classified as", result)
 ```
