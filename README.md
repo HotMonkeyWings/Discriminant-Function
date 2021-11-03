@@ -41,7 +41,7 @@ In order to match the question, the configuration variables are altered.
 
 ![NewVars](Qn2/Vars.png)
 
-The parameters being passed is also changed
+The configuration parameters being passed are also changed.
 
 - x\[0] indicates that only x^1 will be used.
 - means\[i]\[0] indiciates that we need the mean only for x<sub>1</sub>).
@@ -49,3 +49,49 @@ The parameters being passed is also changed
 
 ![Main](Qn2/Main.png)
 
+This results in the following output:
+
+![Output1](Qn2/ab.png)
+
+### Part (c)
+
+Here, the configuration parameters are changed slightly.
+
+- 'd's value is changed to 2, as now we are considering the first and second features.
+- The matrix paramateres passed now include necessary values for the same reason.
+
+![NewVars](Qn2/Varsc.png)
+
+This results in the following output:
+![Output2](Qn2/c.png)
+
+### Part (d)
+
+Here again, the configurations are changed in a similiar fashion as in (c).
+
+- 'd' values is changed to 3 as all three features are now considered.
+- The matrix paramaeteres are now passed without slicing as all values are important.
+
+![NewVars](Qn2/Varsd.png)
+
+The resuls in the following output:
+
+![Output2](Qn2/d.png)
+
+### Part (e)
+
+On comparing the three outputs, using one or three features give more accurate results than using the first and second features.
+
+![Output3](Qn2/e.png)
+
+The reason for this could be because the covariance with the third feature is much higher than the ones associated with the second feature.
+
+![Variance](Qn2/CoVar.png)
+
+### Part (f)
+
+In order to consider the possible configurations mentioned, the code takes an input vector and goes through all of them.
+![Vars](Qn2/Varsf.png)
+
+Here are the outputs for the 4 input vectors mentioned in the question:
+![Otuput4](Qn2/f.png)

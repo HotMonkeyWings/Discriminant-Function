@@ -75,33 +75,40 @@ def main():
         cov.append(np.cov(data[i].T))
     means, cov = np.array(means), np.array(cov)
 
-    print(cov)
-
-    # Configuration values
+    # General Configuration values
     n = len(data) - 1
     P = [0.5, 0.5, 0]
+    g_values = [0 for i in range(n)]
+
+    # Take input
+    x = list(map(float, input("Enter the input vector: ").strip().split()))
+
+    # Case A
     d = 1
+    print("Case A: Using only feature vector x1")
+    for i in range(n):
+        g_values[i] = discriminant_function(x[0], means[i][0], cov[i][0][0], d, P[i])
+    # Now to output the maximum result 
+    result = g_values.index(max(g_values)) + 1
+    print(x, "\twas classified as", result)
+    
+    # Case B
+    d = 2
+    print("\nCase B: Using only feature vectors x1 and x2")
+    for i in range(n):
+        g_values[i] = discriminant_function(x[0:2], means[i][0:2], cov[i][0:2, 0:2], d, P[i])
+    # Now to output the maximum result 
+    result = g_values.index(max(g_values)) + 1
+    print(x, "\twas classified as", result)
 
-    # Taking each dataset from the classes in sample data
-    for j in range(n):
-        print("\nData classes should be classified as:", j+1)
-        total_count, count = 0, 0
-
-        # Taking x as dataset belonging to class j + 1
-        for x in data[j]:
-            g_values = [0 for g in range(n)]        # Array for all discrminant function outputs.
-
-            # Itering through each class' discriminant function
-            for i in range(n):
-                g_values[i] = discriminant_function(x[0], means[i][0], cov[i][0][0], d, P[i])
-
-            # Now to output the maximum result 
-            result = g_values.index(max(g_values)) + 1
-            print(x, "\twas classified as", result)
-            total_count, count = total_count + 1, (count + 1 if j == result - 1 else count)
-        
-        print("Success Rate:", (count/total_count)*100,"%")
-        print("Fail Rate:", 100 - ((count/total_count))*100,"%")
+    # Case C
+    d = 3
+    print("\nCase C: Using all feature vectors")
+    for i in range(n):
+        g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
+    # Now to output the maximum result 
+    result = g_values.index(max(g_values)) + 1
+    print(x, "\twas classified as", result)
 
 if __name__ == '__main__':
     main()

@@ -75,12 +75,10 @@ def main():
         cov.append(np.cov(data[i].T))
     means, cov = np.array(means), np.array(cov)
 
-    print(cov)
-
     # Configuration values
     n = len(data) - 1
     P = [0.5, 0.5, 0]
-    d = 1
+    d = 3
 
     # Taking each dataset from the classes in sample data
     for j in range(n):
@@ -93,7 +91,7 @@ def main():
 
             # Itering through each class' discriminant function
             for i in range(n):
-                g_values[i] = discriminant_function(x[0], means[i][0], cov[i][0][0], d, P[i])
+                g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
 
             # Now to output the maximum result 
             result = g_values.index(max(g_values)) + 1
