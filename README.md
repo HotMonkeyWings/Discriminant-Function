@@ -43,7 +43,7 @@ In order to match the question, the configuration variables are altered.
 
 The configuration parameters being passed are also changed.
 
-- x\[0] indicates that only x^1 will be used.
+- x\[0] indicates that only x<sub>1</sub> will be used.
 - means\[i]\[0] indiciates that we need the mean only for x<sub>1</sub>).
 - cov\[i]\[0]\[0] indicates the variance of feature x<sub>1</sub>).
 
