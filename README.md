@@ -5,7 +5,7 @@
 <p><center>By Dev Sony, B180297CS</center></p>
 The question, report and source code can be found here.
 
-[Github Repo]()
+[Github Repo](https://github.com/HotMonkeyWings/Discriminant-Function)
 
 ## Solution 1
 
@@ -240,7 +240,7 @@ d = 3
 print("\nCase C: Using all feature vectors")
 for i in range(n):
     g_values[i] = discriminant_function(x, means[i], cov[i], d, P[i])
-    
+
 # Now to output the maximum result 
 result = g_values.index(max(g_values)) + 1
 print(x, "\twas classified as", result)
