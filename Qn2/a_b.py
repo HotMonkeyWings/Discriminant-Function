@@ -75,15 +75,13 @@ def main():
         cov.append(np.cov(data[i].T))
     means, cov = np.array(means), np.array(cov)
 
-    print(cov)
-
     # Configuration values
     n = len(data) - 1
     P = [0.5, 0.5, 0]
     d = 1
 
     # Taking each dataset from the classes in sample data
-    for j in range(n):
+    for j in range(n + 1):
         print("\nData classes should be classified as:", j+1)
         total_count, count = 0, 0
 

@@ -121,8 +121,9 @@ Assuming that all classes have an equal prior probability (as per the configurat
 ### Part (a) and (b)
 In order to match the question, the configuration variables are altered. 
 
-- (data-1) for n indicates that only 2 classes will be considered (the final class would not be considered as its Prior probability is 0, implying that it wouldn't appear.)
-- The d value is changed to 1, indicating that only 1 feature will be used. (which is x<sub>1</sub> )
+- `data-1` for `n` indicates that only 2 classes will be considered (the final class would not be considered as its Prior probability is 0, implying that it wouldn't appear.)
+- We iterate through `n + 1` in the outer loop as datasets of all 3 classes are being classified. (Althought class 3 is fully misclassified.)
+- The `d` value is changed to 1, indicating that only 1 feature will be used. (which is x<sub>1</sub> )
 
 ```
 n = len(data) - 1
@@ -132,12 +133,12 @@ d = 1
 
 The configuration parameters being passed are also changed.
 
-- x\[0] indicates that only x<sub>1</sub> will be used.
-- means\[i]\[0] indiciates that we need the mean only for x<sub>1</sub>).
-- cov\[i]\[0]\[0] indicates the variance of feature x<sub>1</sub>).
+- `x[0]` indicates that only x<sub>1</sub> will be used.
+- `means[i][0]` indiciates that we need the mean only for x<sub>1</sub>).
+- `cov[i][0][0]` indicates the variance of feature x<sub>1</sub>).
 
 ```
-for j in range(n):
+for j in range(n + 1):
     print("\nData classes should be classified as:", j+1)
     total_count, count = 0, 0
 
@@ -166,7 +167,7 @@ This results in the following output:
 
 Here, the configuration parameters are changed slightly.
 
-- 'd's value is changed to 2, as now we are considering the first and second features.
+- `d` is changed to 2, as now we are considering the first and second features.
 - The matrix paramateres passed now include necessary values for the same reason.
 
 ```
@@ -182,7 +183,7 @@ This results in the following output:
 
 Here again, the configurations are changed in a similiar fashion as in (c).
 
-- 'd' values is changed to 3 as all three features are now considered.
+- `d` values is changed to 3 as all three features are now considered.
 - The matrix paramaeteres are now passed without slicing as all values are important.
 
 ```
