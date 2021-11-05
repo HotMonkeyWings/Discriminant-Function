@@ -1,6 +1,6 @@
 <h1>
-    <center>CS4023D Artificial Intelligence</center>
-    <center>Assignment 2</center>
+    <center>CS4044D Machine Learning</center>
+    <center>Assignment 1</center>
 </h1>
 <p><center>By Dev Sony, B180297CS</center></p>
 The question, report and source code can be found here.
